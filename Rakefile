@@ -282,6 +282,10 @@ end
 def verify_manifest(theme_path)
   manifest_path = File.join(theme_path, "manifest.yml")
   manifest_file = File.open( manifest_path )
+  #puts File.path(manifest_path)
+  #puts File.absolute_path(manifest_path)
+  #abort("--end test")
+
   abort("rake aborted: repo must contain valid manifest.yml") unless File.exist? manifest_file
   manifest = YAML.load( manifest_file )
   manifest_file.close
